@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_margin="10dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_launcher_background">
+
+        </ImageView>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="THE APP TITLE"
+            android:layout_toRightOf="@+id/image"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="5dp">
+        </TextView>
+        <TextView
+            android:id="@+id/decription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This will be the app description"
+            android:layout_toEndOf="@+id/image"
+            android:layout_below="@+id/title"
+            android:layout_marginLeft="5dp">
+        </TextView>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
