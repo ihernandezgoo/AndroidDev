@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.vins_androidprojects"
+    namespace = "com.example.va_projects"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.vins_androidprojects"
+        applicationId = "com.example.va_projects"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -34,10 +34,14 @@ android {
 dependencies {
 
     implementation(libs.appcompat)
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
+    implementation("androidx.recyclerview:recyclerview-selection:1.2.0")
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
 }

@@ -19,6 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Vins_AndroidProjects"
+rootProject.name = "VA_Projects"
 include(":app")
- 

@@ -1,4 +1,4 @@
-package com.example.vins_androidprojects;
+package com.example.va_projects;
 
 import org.junit.Test;
 

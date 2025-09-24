@@ -1,8 +1,7 @@
-package com.example.vins_androidprojects;
+package com.example.va_projects;
 
 public class Project {
-    String name;
-    String description;
+    String name, description;
     int image;
 
     public Project(String name, String description, int image) {
