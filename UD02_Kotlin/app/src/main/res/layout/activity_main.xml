@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="48dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_contact_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact name:">
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_contact_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact number:">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_display_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="My display name:"
+                android:inputType="textCapWords">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/checkbox_junior"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Include 'Junior'">
+        </CheckBox>
+
+        <Spinner
+            android:id="@+id/spinner_jobs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@android:layout/simple_list_item_1">
+        </Spinner>
+
+        <CheckBox
+            android:id="@+id/start_now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inmediate start">
+        </CheckBox>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_available_from"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Available from date"
+                android:inputType="date">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/button_preview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Preview Message"
+            android:layout_marginTop="20dp"
+            style="@style/TextAppearance.AppCompat.Widget.Button.Colored">
+        </Button>
+
+    </LinearLayout>
+
+</ScrollView>
