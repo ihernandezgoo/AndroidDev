@@ -2,47 +2,41 @@ package com.example.ssp_app
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.Spinner
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.textfield.TextInputEditText
+import com.example.ssp_app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    var contactNameText : TextInputEditText? = null;
-    var contactNumberText : TextInputEditText? = null;
-    var myDisplayName : TextInputEditText? = null;
-    var juniorCheckBox : CheckBox? = null;
-    var jobSpinner : Spinner? = null;
-    var immediateStart : CheckBox? = null;
-    var availableFrom : TextInputEditText? = null;
 
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-
-        val previewButton : Button = findViewById(R.id.button_preview);
-        previewButton.setOnClickListener {
-            onPreviewClicked();
+        binding.buttonPreview.setOnClickListener {
+            onPreviewClicked()
         }
     }
-}
 
-private fun MainActivity.onPreviewClicked() {
+    private fun onPreviewClicked() {
+        val contactName = binding.editTextContactName.text.toString()
+        val contactNumber = binding.editTextContactNumber.text.toString()
+        val displayName = binding.editTextDisplayName.text.toString()
+        val isJunior = binding.checkboxJunior.isChecked
+        val jobPosition = binding.spinnerJobs.selectedItem.toString()
+        val isImmediateStart = binding.startNow.isChecked
+        val availableDate = binding.editTextAvailableFrom.text.toString()
 
-    contactNameText = findViewById(R.id.edit_text_contact_name);
-    contactNumberText = findViewById(R.id.edit_text_contact_number);
-    myDisplayName = findViewById(R.id.edit_text_display_name);
-    juniorCheckBox = findViewById(R.id.checkbox_junior);
-    jobSpinner = findViewById(R.id.spinner_jobs);
-    immediateStart = findViewById(R.id.start_now);
-    availableFrom = findViewById(R.id.edit_text_available_from);
-
-    val previewActivityInt = Intent(this, PreviewActivity::class.java);
-
-    startActivity(previewActivityInt)
-
+        val previewActivityIntent = Intent(this, PreviewActivity::class.java).apply {
+            putExtra("EXTRA_CONTACT_NAME", contactName)
+            putExtra("EXTRA_CONTACT_NUMBER", contactNumber)
+            putExtra("EXTRA_DISPLAY_NAME", displayName)
+            putExtra("EXTRA_IS_JUNIOR", isJunior)
+            putExtra("EXTRA_JOB_POSITION", jobPosition)
+            putExtra("EXTRA_IMMEDIATE_START", isImmediateStart)
+            putExtra("EXTRA_AVAILABLE_DATE", availableDate)
+        }
+        startActivity(previewActivityIntent)
+    }
 }
