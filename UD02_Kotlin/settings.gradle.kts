@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SSP_APP"
+rootProject.name = "SSP"
 include(":app")
  

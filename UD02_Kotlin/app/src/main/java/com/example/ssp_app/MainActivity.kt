@@ -1,5 +1,6 @@
 package com.example.ssp_app
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
@@ -21,13 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main);
-        contactNameText = findViewById(R.id.edit_text_contact_name);
-        contactNumberText = findViewById(R.id.edit_text_contact_number);
-        myDisplayName = findViewById(R.id.edit_text_display_name);
-        juniorCheckBox = findViewById(R.id.checkbox_junior);
-        jobSpinner = findViewById(R.id.spinner_jobs);
-        immediateStart = findViewById(R.id.start_now);
-        availableFrom = findViewById(R.id.edit_text_available_from);
+
 
         val previewButton : Button = findViewById(R.id.button_preview);
         previewButton.setOnClickListener {
@@ -37,11 +32,17 @@ class MainActivity : AppCompatActivity() {
 }
 
 private fun MainActivity.onPreviewClicked() {
-    /*val contactName : EditText = findViewById(R.id.edit_text_contact_name);
-    val contactNumber : EditText = findViewById(R.id.edit_text_contact_number);*/
-    val testString : String = contactNameText?.text.toString() + "" + contactNumberText?.text.toString();
 
-    Toast.makeText(this.applicationContext, testString, Toast.LENGTH_SHORT).show()
+    contactNameText = findViewById(R.id.edit_text_contact_name);
+    contactNumberText = findViewById(R.id.edit_text_contact_number);
+    myDisplayName = findViewById(R.id.edit_text_display_name);
+    juniorCheckBox = findViewById(R.id.checkbox_junior);
+    jobSpinner = findViewById(R.id.spinner_jobs);
+    immediateStart = findViewById(R.id.start_now);
+    availableFrom = findViewById(R.id.edit_text_available_from);
 
+    val previewActivityInt = Intent(this, PreviewActivity::class.java);
+
+    startActivity(previewActivityInt)
 
 }

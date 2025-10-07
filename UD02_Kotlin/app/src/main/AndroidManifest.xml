@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SSP_APP">
         <activity
+            android:name=".PreviewActivity"
+            android:exported="false"
+            android:label="@string/title_activity_preview"
+            android:theme="@style/Theme.SSP_APP"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
