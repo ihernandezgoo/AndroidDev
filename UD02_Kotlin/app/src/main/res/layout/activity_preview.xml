@@ -25,10 +25,10 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@id/button_preview"
+        android:id="@+id/button_preview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Preview Message"
+        android:text="@string/preview_message"
         android:layout_marginTop="20dp"
         style="@style/TextAppearance.AppCompat.Widget.Button.Inverse">
 
