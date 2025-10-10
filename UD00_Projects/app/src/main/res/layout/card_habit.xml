@@ -16,8 +16,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Título editable al crear -->
-        <TextView
+        <EditText
             android:id="@+id/habitTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,19 +24,22 @@
             android:textSize="18sp"
             android:textColor="#2E3D49"
             android:textStyle="bold"
-            android:paddingBottom="4dp"/>
+            android:paddingBottom="4dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="20dp"
+            android:background="@null"/>
 
-        <!-- Descripción editable al crear -->
-        <TextView
+        <EditText
             android:id="@+id/habitDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Descripción del hábito"
+            android:hint="Descripción del hábito"
             android:textSize="14sp"
             android:textColor="#666666"
-            android:paddingBottom="8dp"/>
+            android:paddingBottom="8dp"
+            android:paddingLeft="25dp"
+            android:background="@null"/>
 
-        <!-- Botón guardar / crear -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/saveHabitButton"
             android:layout_width="wrap_content"
@@ -47,9 +49,9 @@
             android:textColor="#FFFFFF"
             android:backgroundTint="#8BC34A"
             app:cornerRadius="12dp"
-            android:elevation="2dp"/>
+            android:elevation="2dp"
+            android:layout_marginRight="10dp"/>
 
-        <!-- Racha de días -->
         <TextView
             android:id="@+id/habitDayCount"
             android:layout_width="wrap_content"
@@ -57,9 +59,9 @@
             android:text="Racha de 0 días"
             android:textSize="14sp"
             android:textColor="#666666"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp"
+            android:paddingLeft="25dp"/>
 
-        <!-- Botón de incrementar días -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/habitDayButton"
             android:layout_width="140dp"
@@ -69,6 +71,7 @@
             android:layout_marginTop="8dp"
             app:cornerRadius="12dp"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#03A9F4"/>
+            android:backgroundTint="#03A9F4"
+            android:layout_marginRight="10dp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
