@@ -73,5 +73,15 @@
             android:textColor="#FFFFFF"
             android:backgroundTint="#03A9F4"
             android:layout_marginRight="10dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/removeHabits"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="Borrar habito"
+            android:layout_gravity="end"
+            app:cornerRadius="12dp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#F50057"
+            android:layout_marginRight="10dp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
