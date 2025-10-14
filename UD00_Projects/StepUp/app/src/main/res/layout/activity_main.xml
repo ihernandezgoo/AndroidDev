@@ -48,7 +48,7 @@
             android:text="Estadisticas"
             android:layout_marginStart="8dp"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#C51162"
+            android:backgroundTint="#D81B60"
             app:cornerRadius="16dp"
             android:elevation="4dp"
             android:fontFamily="sans-serif-medium"/>
@@ -63,6 +63,7 @@
             android:id="@+id/habitContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"/>
     </ScrollView>
 </LinearLayout>

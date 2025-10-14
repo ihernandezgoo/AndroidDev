@@ -1,16 +1,17 @@
 package com.example.stepup
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.stepup.databinding.ActivityStatisticsBinding
 
 class StatisticsActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityStatisticsBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_statistics)
-
-        val statsTextView = findViewById<TextView>(R.id.statsTextView)
+        binding = ActivityStatisticsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val prefs = getSharedPreferences("habits_prefs", MODE_PRIVATE)
         val all = prefs.all
@@ -40,6 +41,11 @@ class StatisticsActivity : AppCompatActivity() {
             Mayor racha: $maxStreak días (${maxStreakHabit})
         """.trimIndent()
 
-        statsTextView.text = statsText
+        binding.statsTextView.text = statsText
+
+        binding.buttonBack.setOnClickListener {
+            val main = android.content.Intent(this, MainActivity::class.java)
+            startActivity(main)
+        }
     }
 }
