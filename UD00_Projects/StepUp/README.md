@@ -1,124 +1,107 @@
 # StepUp 🚶‍♂️
+StepUp ohiturak eta jarduera fisikoa jarraitzeko Android aplikazio bat da, Androiden garapenaren oinarriak ikasteko hezkuntza-proiektu gisa garatua.
 
-StepUp es una aplicación Android para el seguimiento habitos y actividades física, desarrollada como proyecto educativo para aprender los fundamentos del desarrollo en Android.
+## 📱 Deskribapena
+StepUp-ek erabiltzaileei euren eguneroko jarduera kontrolatzea ahalbidetzen die Android gailuetan integratutako ohituren kontagailuaren bidez. Aplikazioak interfaze intuitibo bat eskaintzen du eguneroko aurrerapena ikusteko eta bizimodu aktiboagoa sustatzeko.
 
-## 📱 Descripción
+## ✨ Ezaugarriak
+- 📊 Ohituren kontagailua denbora errealean
+- 📈 Eguneroko aurrerapenaren eta estatistiken bistaratzea aurrerapen-barrekin
+- 💾 Datu historikoen tokiko biltegiratzea
+- 🎨 Erabiltzaile-interfaze modernoa eta moldakorra
 
-StepUp permite a los usuarios monitorizar su actividad diaria a través del contador de habitos integrado en sus dispositivos Android. La aplicación ofrece una interfaz intuitiva para visualizar el progreso diario y motivar un estilo de vida más activo.
-
-## ✨ Características
-
-- 📊 Contador de habitos en tiempo real
-- 📈 Visualización del progreso diario y estadisticas con progreso
-- 💾 Almacenamiento local de datos históricos
-- 🎨 Interfaz de usuario moderna y responsiva
-
-## 🛠️ Tecnologías Utilizadas
-
-- **Lenguaje:** Kotlin
+## 🛠️ Erabilitako Teknologiak
+- **Hizkuntza:** Kotlin
 - **IDE:** Android Studio
-- **Arquitectura:** MVVM (Model-View-ViewModel)
+- **Arkitektura:** MVVM (Model-View-ViewModel)
 - **UI:** XML Layouts / Jetpack Compose
-- **Sensores:** Android Sensor Framework
-- **Persistencia:** SharedPreferences / Room Database
-- **Componentes:** 
+- **Sentsoreak:** Android Sensor Framework
+- **Iraunkortasuna:** SharedPreferences / Room Database
+- **Osagaiak:** 
   - LiveData
   - ViewModel
   - Material Design Components
 
-## 📋 Requisitos Previos
+## 📋 Aurretiazko Eskakizunak
+- Android Studio Arctic Fox edo berriagoa
+- Android SDK 24 (Android 7.0) edo handiagoa
+- Android gailua edo emuladorea pausoen sentsoredun
+- Kotlin eta Android-en oinarrizko ezagutzak
 
-- Android Studio Arctic Fox o superior
-- SDK de Android 24 (Android 7.0) o superior
-- Dispositivo Android o emulador con sensor de pasos
-- Conocimientos básicos de Kotlin y Android
-
-## 🚀 Instalación y Configuración
-
-1. **Clonar el repositorio:**
+## 🚀 Instalazioa eta Konfigurazioa
+1. **Biltegia klonatu:**
 ```bash
 git clone https://github.com/ihernandezgoo/AndroidDev.git
 cd AndroidDev/UD00_Projects/StepUp
 ```
 
-2. **Abrir el proyecto en Android Studio:**
-   - Abre Android Studio
-   - Selecciona "Open an existing project"
-   - Navega hasta la carpeta StepUp
-   - Espera a que Gradle sincronice las dependencias
+2. **Proiektua Android Studio-n ireki:**
+   - Ireki Android Studio
+   - Hautatu "Open an existing project"
+   - Joan StepUp karpetara
+   - Itxaron Gradle-k dependentziak sinkronizatu arte
 
-3. **Configurar el dispositivo:**
-   - Conecta un dispositivo físico con depuración USB activada
-   - O configura un emulador Android (AVD)
+3. **Gailua konfiguratu:**
+   - Konektatu gailu fisiko bat USB arazketa aktibatuta duela
+   - Edo konfiguratu Android emuladorea (AVD)
 
-4. **Compilar y ejecutar:**
-   - Haz clic en el botón "Run" (▶️) en Android Studio
-   - Selecciona tu dispositivo/emulador
-   - Espera a que la aplicación se instale e inicie
+4. **Konpilatu eta exekutatu:**
+   - Egin klik "Run" botoian (▶️) Android Studio-n
+   - Hautatu zure gailua/emuladorea
+   - Itxaron aplikazioa instalatu eta abiarazi arte
 
-## 📱 Permisos Requeridos
-
+## 📱 Beharrezko Baimenak
 ```xml
 <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
 <uses-feature android:name="android.hardware.sensor.stepcounter" />
 ```
 
-**Nota:** Para Android 10 (API 29) y superior, se requiere permiso en tiempo de ejecución para ACTIVITY_RECOGNITION.
+**Oharra:** Android 10 (API 29) eta berriagoetarako, exekuzio-denboran baimena behar da ACTIVITY_RECOGNITION-rako.
 
+### Datuen Biltegiratzea
+Datuak lokalean gordetzen dira erabiltzailearen jarduera-historiala mantentzeko aplikazioa itxita dagoenean ere.
 
+### Jakinarazpenak
+Aukerako gogorarazpen-sistema erabiltzailea bere eguneroko helburuak betetzen laguntzeko.
 
-### Almacenamiento de Datos
-Los datos se persisten localmente para mantener el historial de actividad del usuario incluso cuando la aplicación está cerrada.
-
-### Notificaciones
-Sistema opcional de recordatorios para motivar al usuario a cumplir sus objetivos diarios.
-
-## 🧪 Testing
-
-Para ejecutar los tests unitarios:
-
+## 🧪 Probak
+Unitate probak exekutatzeko:
 ```bash
 ./gradlew test
 ```
 
-Para ejecutar los tests instrumentados:
-
+Instrumentatutako probak exekutatzeko:
 ```bash
 ./gradlew connectedAndroidTest
 ```
 
-## 🐛 Problemas Conocidos
+## 🐛 Arazo Ezagunak
+- Pausoen sentsorea ez dago emulatzaile guztietan eskuragarri
+- Kontagailuaren zehaztasuna gailuaren hardwarearen araberakoa da
+- Bigarren planoan, sistemak sentsorearen sarbidea mugatu dezake bateria aurrezteko
 
-- El sensor de pasos puede no estar disponible en todos los emuladores
-- La precisión del contador depende del hardware del dispositivo
-- En segundo plano, el sistema puede limitar el acceso al sensor para ahorrar batería
+## 🔮 Etorkizuneko Hobekuntzak
+- [ ] Google Fit-ekin integrazioa
+- [ ] Asteko/hileko aurrerapen-grafikoak
+- [ ] Lorpen eta txapa sistema
+- [ ] Lorpenak sare sozialetan partekatzea
+- [ ] Erabiltzaileen arteko erronka modua
+- [ ] Datuak CSV-ra esportatzea
 
-## 🔮 Mejoras Futuras
+## 👥 Ekarpenak
+Ekarpenak ongi etorriak dira. Mesedez:
 
-- [ ] Integración con Google Fit
-- [ ] Gráficos de progreso semanal/mensual
-- [ ] Sistema de logros y badges
-- [ ] Compartir logros en redes sociales
-- [ ] Modo de desafíos entre usuarios
-- [ ] Exportación de datos a CSV
+1. Egin biltegiko fork bat
+2. Sortu adar bat zure ezaugarriarentzat (`git checkout -b feature/ezaugarri-berria`)
+3. Egin zure aldaketak eta commit-a (`git commit -am 'Ezaugarri berria gehitzen'`)
+4. Igo aldaketak zure adarrera (`git push origin feature/ezaugarri-berria`)
+5. Ireki Pull Request bat
 
-## 👥 Contribuciones
+## 📄 Lizentzia
+Proiektu hau kode irekikoa da eta [MIT Lizentziaren](LICENSE) pean eskuragarri dago.
 
-Las contribuciones son bienvenidas. Por favor:
-
-1. Haz fork del repositorio
-2. Crea una rama para tu característica (`git checkout -b feature/nueva-caracteristica`)
-3. Realiza tus cambios y haz commit (`git commit -am 'Añade nueva característica'`)
-4. Sube los cambios a tu rama (`git push origin feature/nueva-caracteristica`)
-5. Abre un Pull Request
-
-## 📄 Licencia
-
-Este proyecto es de código abierto y está disponible bajo la [Licencia MIT](LICENSE).
-
-## 👨‍💻 Autor
-
+## 👨‍💻 Egilea
 **ihernandezgoo**
 - GitHub: [@ihernandezgoo](https://github.com/ihernandezgoo)
 
-⭐ Si este proyecto te ha sido útil, ¡considera darle una estrella en GitHub!
+⭐ Proiektu honek lagundu badizu, eman izar bat GitHub-en!
