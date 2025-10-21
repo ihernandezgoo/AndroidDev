@@ -18,7 +18,6 @@ class StatisticsActivity : AppCompatActivity() {
         val all = prefs.all
         val uniqueIds = all.keys.mapNotNull { it.substringBefore("_") }.distinct()
 
-        // Variables base
         var totalHabits = 0
         var totalDays = 0
         var maxStreak = 0
@@ -55,32 +54,31 @@ class StatisticsActivity : AppCompatActivity() {
 
         val avgDays = if (totalHabits > 0) totalDays / totalHabits else 0
         val points = totalDays
+        val level = points / 50 + 1
 
         val statsText = """
-            📊 ESTADÍSTICAS GENERALES
-            -------------------------
-            Total de hábitos: $totalHabits
-            Hábitos completados: $completedHabits
-            Hábitos abandonados: $abandonedHabits
+            🔹 **Resumen General**
+            • Total de hábitos: $totalHabits  
+            • Activos: $activeHabits  
+            • Completados: $completedHabits  
+            • Abandonados: $abandonedHabits  
 
-            💪 PROGRESO
-            -----------
-            Total de días acumulados: $totalDays
-            Promedio de días por hábito: $avgDays
-            Mayor racha: $maxStreak días ($maxStreakHabit)
-            Hábito más reciente: ${if (mostRecentHabit.isNotEmpty()) mostRecentHabit else "N/A"}
+            💪 **Progreso**
+            • Días acumulados: $totalDays  
+            • Promedio por hábito: $avgDays  
+            • Mayor racha: $maxStreak días ($maxStreakHabit)  
+            • Último hábito actualizado: ${if (mostRecentHabit.isNotEmpty()) mostRecentHabit else "N/A"}  
 
-            🏆 MOTIVACIÓN
-            --------------
-            Puntos totales: $points XP
-            Nivel estimado: ${points / 50 + 1}
+            🏆 **Motivación**
+            • Puntos totales: $points XP  
+            • Nivel estimado: $level  
         """.trimIndent()
 
         binding.statsTextView.text = statsText
 
         binding.buttonBack.setOnClickListener {
-            val main = Intent(this, MainActivity::class.java)
-            startActivity(main)
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 }

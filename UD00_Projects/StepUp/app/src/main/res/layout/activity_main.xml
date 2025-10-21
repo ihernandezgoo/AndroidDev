@@ -2,22 +2,35 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
+    android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:text="StepUp"
-        android:textSize="28sp"
-        android:textColor="#2E3D49"
-        android:paddingTop="40dp"
-        android:paddingBottom="20dp"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/logowhite2_round"
+            android:layout_marginEnd="10dp"
+            />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="StepUp"
+            android:textSize="28sp"
+            android:textColor="#2E3D49" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,7 +58,7 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="Estadisticas"
+            android:text="Estadísticas"
             android:layout_marginStart="8dp"
             android:textColor="#FFFFFF"
             android:backgroundTint="#D81B60"
@@ -66,4 +79,5 @@
             android:orientation="vertical"
             android:layout_marginTop="20dp"/>
     </ScrollView>
+
 </LinearLayout>
