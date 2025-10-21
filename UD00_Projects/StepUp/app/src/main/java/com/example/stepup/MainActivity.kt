@@ -70,13 +70,11 @@ class MainActivity : AppCompatActivity() {
             habitCardBinding.habitDayButton.visibility = View.VISIBLE
         }
 
-        // Validar si la racha se perdió
         if (!isNew && lastAddedDay != 0L) {
             val lastDay = Calendar.getInstance().apply { timeInMillis = lastAddedDay }
             val today = Calendar.getInstance()
             if (today.get(Calendar.YEAR) != lastDay.get(Calendar.YEAR) ||
                 today.get(Calendar.DAY_OF_YEAR) != lastDay.get(Calendar.DAY_OF_YEAR)) {
-                // Reiniciar racha
                 days = 0
                 habitCardBinding.habitDayCount.text = "Racha de $days días"
                 saveHabitState(habitId, days, canAddDay, 0L, title, description)
@@ -121,7 +119,6 @@ class MainActivity : AppCompatActivity() {
             }.start()
         }
 
-        // Reanudar contador si estaba activo
         if (!canAddDay) {
             val remainingTime = endTime - System.currentTimeMillis()
             val adjustedTime = if (remainingTime > getMillisUntilMidnight()) getMillisUntilMidnight() else remainingTime

@@ -29,7 +29,6 @@ class StatisticsActivity : AppCompatActivity() {
         var mostRecentHabit = ""
         var mostRecentTime = 0L
 
-        // Recorrer todos los hábitos
         for (id in uniqueIds) {
             val days = prefs.getInt("${id}_days", 0)
             val title = prefs.getString("${id}_title", "Hábito") ?: "Hábito"
