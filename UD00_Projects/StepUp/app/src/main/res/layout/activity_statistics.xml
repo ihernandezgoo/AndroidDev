@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="#F9FAFB">
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/logowhite2_round"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Estadisticas"
+            android:textSize="28sp"
+            android:textColor="#2E3D49" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,10 +45,8 @@
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:fontFamily="sans-serif-medium"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="32dp"
             android:padding="12dp"
-            android:layout_marginVertical="20dp"
             android:backgroundTint="#4CAF50"
             app:cornerRadius="20dp"
             app:iconTint="#FFFFFF"
@@ -51,7 +74,5 @@
                 android:fontFamily="sans-serif-light" />
         </com.google.android.material.card.MaterialCardView>
 
-
-
     </LinearLayout>
-</ScrollView>
+</LinearLayout>
