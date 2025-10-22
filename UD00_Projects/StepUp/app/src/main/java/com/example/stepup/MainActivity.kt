@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.addHabitButton.setOnClickListener {
             val habitId = System.currentTimeMillis().toString()
-            addNewHabit("Título del hábito", "Descripción del hábito", habitId, isNew = true)
+            addNewHabit("Ohituraren izena", "Ohituraren deskribapena", habitId, isNew = true)
         }
 
         binding.habitsStats.setOnClickListener {
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
         habitCardBinding.habitTitle.setText(title)
         habitCardBinding.habitDescription.setText(description)
-        habitCardBinding.habitDayCount.text = "Racha de $days días"
+        habitCardBinding.habitDayCount.text = "$days eguneko bolada"
 
         if (isNew) {
             habitCardBinding.habitTitle.isEnabled = true
@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
             if (today.get(Calendar.YEAR) != lastDay.get(Calendar.YEAR) ||
                 today.get(Calendar.DAY_OF_YEAR) != lastDay.get(Calendar.DAY_OF_YEAR)) {
                 days = 0
-                habitCardBinding.habitDayCount.text = "Racha de $days días"
+                habitCardBinding.habitDayCount.text = "$days eguneko bolada"
                 saveHabitState(habitId, days, canAddDay, 0L, title, description)
             }
         }
@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
             habitCardBinding.habitDescription.isEnabled = false
             habitCardBinding.saveHabitButton.visibility = View.GONE
             habitCardBinding.habitDayButton.visibility = View.VISIBLE
-            habitCardBinding.habitDayCount.text = "Racha de $days días"
+            habitCardBinding.habitDayCount.text = "$days eguneko bolada"
             saveHabitState(habitId, days, canAddDay, endTime, titleText, descriptionText)
         }
 
@@ -99,20 +99,19 @@ class MainActivity : AppCompatActivity() {
                     val hours = TimeUnit.MILLISECONDS.toHours(millisUntilFinished)
                     val minutes = TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) % 60
                     val seconds = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) % 60
-                    habitCardBinding.habitDayButton.text = String.format("Añadir un día (%02d:%02d:%02d)", hours, minutes, seconds)
+                    habitCardBinding.habitDayButton.text = String.format("Egun bat gehitu (%02d:%02d:%02d)", hours, minutes, seconds)
                 }
 
                 override fun onFinish() {
                     canAddDay = true
                     habitCardBinding.habitDayButton.isEnabled = true
-                    habitCardBinding.habitDayButton.text = "Añadir un día"
-                    // Si no se pulsó durante el día, reiniciar la racha
+                    habitCardBinding.habitDayButton.text = "Egun bat gehitu"
                     val today = Calendar.getInstance()
                     val lastDay = Calendar.getInstance().apply { timeInMillis = lastAddedDay }
                     if (today.get(Calendar.YEAR) != lastDay.get(Calendar.YEAR) ||
                         today.get(Calendar.DAY_OF_YEAR) != lastDay.get(Calendar.DAY_OF_YEAR)) {
                         days = 0
-                        habitCardBinding.habitDayCount.text = "Racha de $days días"
+                        habitCardBinding.habitDayCount.text = "$days eguneko bolada"
                     }
                     saveHabitState(habitId, days, canAddDay, 0L, habitCardBinding.habitTitle.text.toString(), habitCardBinding.habitDescription.text.toString())
                 }
@@ -128,15 +127,15 @@ class MainActivity : AppCompatActivity() {
             } else {
                 canAddDay = true
                 habitCardBinding.habitDayButton.isEnabled = true
-                habitCardBinding.habitDayButton.text = "Añadir un día"
+                habitCardBinding.habitDayButton.text = "Egun bat gehitu"
             }
         }
 
         habitCardBinding.removeHabits.setOnClickListener {
             AlertDialog.Builder(this)
-                .setTitle("Confirmar eliminación")
-                .setMessage("¿Estás seguro de que quieres eliminar este hábito?")
-                .setPositiveButton("Sí") { _, _ ->
+                .setTitle("Ohitura ezabatu")
+                .setMessage("¿Ziur zaude ohitura ezabatu nahi duzula?")
+                .setPositiveButton("Bai") { _, _ ->
                     prefs.edit().apply {
                         remove("${habitId}_days")
                         remove("${habitId}_canAddDay")
@@ -148,7 +147,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     binding.habitContainer.removeView(habitCardBinding.root)
                 }
-                .setNegativeButton("Cancelar") { dialog, _ ->
+                .setNegativeButton("Atzera") { dialog, _ ->
                     dialog.dismiss()
                 }
                 .show()
@@ -163,7 +162,7 @@ class MainActivity : AppCompatActivity() {
             canAddDay = false
             lastAddedDay = System.currentTimeMillis()
             habitCardBinding.habitDayButton.isEnabled = false
-            habitCardBinding.habitDayCount.text = "Racha de $days días"
+            habitCardBinding.habitDayCount.text = "$days eguneko bolada"
 
             val remainingMillis = getMillisUntilMidnight()
             val endTimestamp = System.currentTimeMillis() + remainingMillis
@@ -201,8 +200,8 @@ class MainActivity : AppCompatActivity() {
         val all = prefs.all
         val uniqueIds = all.keys.mapNotNull { it.substringBefore("_") }.distinct()
         for (id in uniqueIds) {
-            val title = prefs.getString("${id}_title", "Título del hábito") ?: "Título del hábito"
-            val description = prefs.getString("${id}_description", "Descripción del hábito") ?: "Descripción del hábito"
+            val title = prefs.getString("${id}_title", "Ohituraren izena") ?: "Ohituraren izena"
+            val description = prefs.getString("${id}_description", "Ohituraren deskribapena") ?: "Ohituraren deskribapena"
             addNewHabit(title, description, id, isNew = false)
         }
     }

@@ -57,21 +57,21 @@ class StatisticsActivity : AppCompatActivity() {
         val level = points / 50 + 1
 
         val statsText = """
-            🔹 **Resumen General**
-            • Total de hábitos: $totalHabits  
-            • Activos: $activeHabits  
-            • Completados: $completedHabits  
-            • Abandonados: $abandonedHabits  
-
-            💪 **Progreso**
-            • Días acumulados: $totalDays  
-            • Promedio por hábito: $avgDays  
-            • Mayor racha: $maxStreak días ($maxStreakHabit)  
-            • Último hábito actualizado: ${if (mostRecentHabit.isNotEmpty()) mostRecentHabit else "N/A"}  
-
-            🏆 **Motivación**
-            • Puntos totales: $points XP  
-            • Nivel estimado: $level  
+            🔹 **Laburpen Orokorra**
+            • Ohitura guztira: $totalHabits  
+            • Aktiboak: $activeHabits  
+            • Osatutakoak: $completedHabits  
+            • Utzitakoak: $abandonedHabits  
+        
+            💪 **Aurrerapena**
+            • Metatutako egunak: $totalDays  
+            • Ohitura bakoitzeko batez bestekoa: $avgDays  
+            • Sekuentzia luzeena: $maxStreak egun ($maxStreakHabit)  
+            • Azken eguneratutako ohitura: ${if (mostRecentHabit.isNotEmpty()) mostRecentHabit else "E/E"}  
+        
+            🏆 **Motibazioa**
+            • Puntu guztira: $points XP  
+            • Maila estimatua: $level  
         """.trimIndent()
 
         binding.statsTextView.text = statsText
