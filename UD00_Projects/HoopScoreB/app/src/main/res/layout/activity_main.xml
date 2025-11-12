@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/layoutTimers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Contenedor para los dos botones de la izquierda -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="start|center_vertical"
+            android:paddingStart="8dp">
+
+            <Button
+                android:id="@+id/btnLeft1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14"/>
+
+            <Button
+                android:id="@+id/btnLeft2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- Tiempo central -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/tvGameTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_game_time"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPossessionTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/possession_time"
+                android:layout_marginLeft="20dp"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="@color/design_default_color_error"
+                android:background="@drawable/border_score"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"/>
+        </LinearLayout>
+
+        <!-- Botón derecho -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end|center_vertical"
+            android:paddingEnd="8dp">
+
+            <Button
+                android:id="@+id/btnRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="23dp"
+                android:text="Hasi denbora"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/ivPossessionArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/possession_arrow"
+        android:textColor="@color/possession_arrow_color"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutTimers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Layout horizontal para equipos y cuarto -->
+    <LinearLayout
+        android:id="@+id/layoutScoresAndQuarter"
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutTimers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Equipo A -->
+        <LinearLayout
+            android:id="@+id/layoutTeamA"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginEnd="16dp">
+
+            <TextView
+                android:id="@+id/tvTeamA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/team_a"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvScoreA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/initial_score"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:background="@drawable/border_score"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button android:id="@+id/btnAMinus" android:text="@string/minus_one" style="@style/ScoreButton"/>
+                <Button android:id="@+id/btnA1" android:text="@string/plus_one" android:layout_marginStart="8dp" style="@style/ScoreButton"/>
+                <Button android:id="@+id/btnA2" android:text="@string/plus_two" android:layout_marginStart="8dp" style="@style/ScoreButton"/>
+                <Button android:id="@+id/btnA3" android:text="@string/plus_three" android:layout_marginStart="8dp" style="@style/ScoreButton"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Cuarto grande -->
+        <TextView
+            android:id="@+id/tvQuarter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quarter_1"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginHorizontal="32dp"
+            android:layout_gravity="center_vertical"/>
+
+        <!-- Equipo B -->
+        <LinearLayout
+            android:id="@+id/layoutTeamB"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:id="@+id/tvTeamB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/team_b"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvScoreB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/initial_score"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:background="@drawable/border_score"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button android:id="@+id/btnBMinus" android:text="@string/minus_one" style="@style/ScoreButton"/>
+                <Button android:id="@+id/btnB1" android:text="@string/plus_one" android:layout_marginStart="8dp" style="@style/ScoreButton"/>
+                <Button android:id="@+id/btnB2" android:text="@string/plus_two" android:layout_marginStart="8dp" style="@style/ScoreButton"/>
+                <Button android:id="@+id/btnB3" android:text="@string/plus_three" android:layout_marginStart="8dp" style="@style/ScoreButton"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

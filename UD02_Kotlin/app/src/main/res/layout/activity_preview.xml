@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="30dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#fff8cb"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/text_view_preview"
+            tools:text="This will be the message preview."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:textAlignment="center">
+        </TextView>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/button_preview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/preview_message"
+        android:layout_marginTop="20dp"
+        style="@style/TextAppearance.AppCompat.Widget.Button.Inverse">
+
+    </Button>
+
+
+</LinearLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <style name="ScoreButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">48dp</item>  <!-- Para un mejor área de toque -->
+    </style>
+</resources>

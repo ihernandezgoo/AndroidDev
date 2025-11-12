@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SSP_APP</string>
+    <string name="title_activity_preview">PreviewActivity</string>
+    <string name="preview_message">Preview Message</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <color name="possession_arrow_color">#FF0000</color>
+    <color name="reset_button_background">#FF0000</color>
+    <color name="reset_button_text">#FFFFFF</color>
+</resources>
