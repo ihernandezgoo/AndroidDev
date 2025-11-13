@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/hb_logo"
+        android:icon="@mipmap/hb_logo_features"
         android:label="FEATURES HS"
-        android:roundIcon="@mipmap/hb_logo"
+        android:roundIcon="@mipmap/hb_logo_features"
         android:supportsRtl="true"
         android:theme="@style/Theme.HoopScoreB">
         <activity
