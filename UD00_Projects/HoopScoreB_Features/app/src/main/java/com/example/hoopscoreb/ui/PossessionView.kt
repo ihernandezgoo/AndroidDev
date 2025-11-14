@@ -28,13 +28,11 @@ class PossessionView(
                 currentPossession = true
                 binding.ivPossessionArrow.rotation = 90f
                 binding.ivPossessionArrow.visibility = View.VISIBLE
-                timerView.resetPossessionTime()
             }
             tiltX > threshold && currentPossession != false -> {
                 currentPossession = false
                 binding.ivPossessionArrow.rotation = 270f
                 binding.ivPossessionArrow.visibility = View.VISIBLE
-                timerView.resetPossessionTime()
             }
         }
     }
