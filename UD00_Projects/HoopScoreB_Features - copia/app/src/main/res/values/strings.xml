@@ -1,0 +1,13 @@
+<resources>
+    <string name="default_game_time">10:00</string>
+    <string name="possession_time">24</string>
+    <string name="possession_arrow">↑</string>
+    <string name="team_a">Etxekoak</string>
+    <string name="team_b">Kanpokoak</string>
+    <string name="initial_score">0</string>
+    <string name="minus_one">-1</string>
+    <string name="plus_one">+1</string>
+    <string name="plus_two">+2</string>
+    <string name="plus_three">+3</string>
+    <string name="quarter_1">Q1</string>
+</resources>

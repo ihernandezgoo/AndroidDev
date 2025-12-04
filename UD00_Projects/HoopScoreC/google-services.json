@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "568764667476",
+    "project_id": "bscorebaord",
+    "storage_bucket": "bscorebaord.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568764667476:android:f4ba74154c53d9a7d27fc1",
+        "android_client_info": {
+          "package_name": "com.example.hoopscorec"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQRxXOTIR1xu9Wqwc9XXihnnTY0wWOfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".addTeams.AddTeamsActivity">
+
+    <!-- Botones para cambiar equipos -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
+
+        <Button
+            android:id="@+id/btnTeam1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Team 1"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnTeam2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Team 2"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- Layout de Team 1 -->
+    <LinearLayout
+        android:id="@+id/layoutTeam1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/etTeam1Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del equipo 1"/>
+
+    </LinearLayout>
+
+    <!-- Layout de Team 2 -->
+    <LinearLayout
+        android:id="@+id/layoutTeam2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/etTeam2Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del equipo 2"/>
+    </LinearLayout>
+
+    <!-- Botón Guardar -->
+    <Button
+        android:id="@+id/btnSaveTeams"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar cambios"
+        android:layout_margin="16dp"/>
+</LinearLayout>
