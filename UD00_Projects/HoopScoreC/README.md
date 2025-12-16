@@ -1,76 +1,86 @@
-# HoopScoreC - Aplicación de Marcador de Baloncesto
+# HoopScoreB 🏀
 
-## Descripción
-Aplicación Android de marcador de baloncesto que permite configurar equipos con jugadores antes de iniciar el partido.
+Saskibaloi partidetako markagailua eraman dezaketen Android aplikazioa, modu erraz eta intuitiboan.
 
-## Características
+## 📋 Deskribapena
 
-### Pantalla de Configuración (SetupActivity)
-- **Pantalla de inicio:** Al iniciar la app, aparece la pantalla de configuración
-- **Configuración de equipos:**
-  - Ingresar nombres de 2 equipos
-  - Añadir jugadores por equipo
-  - Mínimo: 5 jugadores por equipo
-  - Máximo: 12 jugadores por equipo
-- **Validación:** Verifica que se cumplan los requisitos antes de iniciar
-- **Botón "INICIAR PARTIDO":** Navega al marcador con los datos configurados
+HoopScoreB saskibaloi partidetan markadorea kontrolatzeko diseinatutako mugikorreko aplikazio bat da. Puntuak, falta, taldeak eta jokoaren oinarrizko estatistikak denbora errealean erregistratzea ahalbidetzen du.
 
-### Pantalla de Marcador (MainActivity)
-- **Marcador dividido:** Muestra los dos equipos lado a lado
-  - Equipo 1: Color azul
-  - Equipo 2: Color rojo
-- **Nombres personalizados:** Muestra los nombres de los equipos ingresados
-- **Puntuación:**
-  - Botones para sumar puntos: +1, +2, +3 para cada equipo
-  - Marcador grande y visible
-- **Botón Reset:** Reinicia el marcador a 0-0
+## ✨ Ezaugarriak
 
-## Tecnologías Utilizadas
-- **Lenguaje:** Kotlin
-- **Android SDK:** Min SDK 24, Target SDK 36
-- **View Binding:** Habilitado para acceso seguro a las vistas
-- **Material Design:** Para UI moderna y atractiva
+- **Denbora errealeko markagailua**: Bi taldeen puntuazioaren eguneratze berehalakoa
+- **Puntuen erregistroa**: 1, 2 eta 3 puntu idazteko botoiak
+- **Falten kontrola**: Talde bakoitzaren falten jarraipena
+- **Markagailuaren berrabiaraztea**: Partida berri bat hasteko aukera
+- **Interfaze intuitiboa**: Diseinu garbia eta jokoaren bitartean erabiltzeko erraza
 
-## Estructura del Proyecto
-```
-app/
-├── src/main/
-│   ├── java/com/example/hoopscorec/
-│   │   ├── SetupActivity.kt        # Pantalla de configuración inicial
-│   │   ├── MainActivity.kt         # Pantalla del marcador
-│   │   └── Taldeak_activity.kt     # (Archivo antiguo)
-│   ├── res/
-│   │   └── layout/
-│   │       ├── activity_setup.xml  # Layout de configuración
-│   │       └── activity_main.xml   # Layout del marcador
-│   └── AndroidManifest.xml
-```
+## 🛠️ Erabilitako teknologiak
 
-## Flujo de la Aplicación
-1. **Inicio:** Se lanza SetupActivity
-2. **Configuración:** Usuario ingresa:
-   - Nombre del Equipo 1 y sus jugadores (5-12)
-   - Nombre del Equipo 2 y sus jugadores (5-12)
-3. **Validación:** Se verifica que se cumplan los requisitos
-4. **Navegación:** Al presionar "INICIAR PARTIDO", se abre MainActivity
-5. **Partido:** Usuario puede:
-   - Sumar puntos a cada equipo (+1, +2, +3)
-   - Reiniciar el marcador
+- **Hizkuntza**: Kotlin
+- **Plataforma**: Android
+- **IDE**: Android Studio
+- **Android bertsio minimoa**: API 24 (Android 7.0)
+- **Arkitektura**: MVVM (Model-View-ViewModel)
 
-## Compilación
-Para compilar el proyecto, ejecuta:
+## 📱 Pantaila-argazkiak
+
+<img width="2560" height="1600" alt="Screenshot_20251216_094118" src="https://github.com/user-attachments/assets/c54e700a-eec3-4a16-aa71-a5eb26062248" />
+
+## 🚀 Instalazioa
+
+### Aurrebaldintzak
+
+- Android Studio Arctic Fox edo berriagoa
+- JDK 11 edo berriagoa
+- Android gailua edo emuladorea API 24+ duena
+
+### Instalazio pausoak
+
+1. Klonatu errepositorua:
 ```bash
-./gradlew assembleDebug
+git clone https://github.com/ihernandezgoo/AndroidDev.git
+cd AndroidDev/UD00_Projects/HoopScoreB
 ```
 
-## Instalación
-Para instalar en un dispositivo o emulador:
-```bash
-./gradlew installDebug
-```
+2. Ireki proiektua Android Studion
 
-## Notas
-- ViewBinding está habilitado en el proyecto
-- Los bindings se generan automáticamente al compilar
-- La aplicación mantiene los nombres de los equipos durante todo el partido
+3. Sinkronizatu proiektua Gradle-rekin
 
+4. Exekutatu aplikazioa zure gailuan edo emuladorean
+
+## 📖 Erabilera
+
+1. Ireki HoopScoreB aplikazioa
+2. Erabili +1, +2, +3 botoiak talde bakoitzaren puntuak erregistratzeko
+
+## 🏗️ Proiektuaren egitura
+
+## 🤝 Ekarpenak
+
+Ekarpenak ongi etorriak dira. Proiektuarekin lagundu nahi baduzu:
+
+1. Fork egin errepositoruari
+2. Sortu zure feature branch (`git checkout -b feature/EzaugarriBerria`)
+3. Commit egin zure aldaketak (`git commit -m 'Gehitu ezaugarri berria'`)
+4. Push egin branch-era (`git push origin feature/EzaugarriBerria`)
+5. Ireki Pull Request bat
+
+## 📝 Lizentzia
+
+Proiektu hau [MIT lizentziaren](LICENSE) pean dago.
+
+## 👤 Egilea
+
+**ihernandezgoo**
+
+- GitHub: [@ihernandezgoo](https://github.com/ihernandezgoo)
+
+⭐ Proiektua gustoko baduzu, eman izar bat!
+
+## 🔄 Bertsio-historia
+
+### v1.0.0 (Data)
+- Hasierako argitalpena
+- Oinarrizko markagailu funtzioak
+- Puntuak eta faltak erregistratzeko gaitasuna
+- Partidak berrabiarazteko funtzioa
