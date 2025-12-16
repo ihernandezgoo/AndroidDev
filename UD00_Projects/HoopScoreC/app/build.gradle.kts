@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-parcelize")
+
 }
 
 android {
@@ -49,4 +51,11 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(platform("com.google.firebase:firebase-bom:34.6.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    // Gson para serialización de datos
+    implementation("com.google.code.gson:gson:2.10.1")
+    // iText para generar PDFs
+    implementation("com.itextpdf:itext7-core:7.2.5")
 }
